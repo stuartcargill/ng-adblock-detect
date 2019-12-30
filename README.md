@@ -1,27 +1,52 @@
-# NgxAdblockDetect
+# Angular Adblock Detect
+Super simple compact adblock detecter for Angular 8+.  Angular Universal/SSR compatible.  
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.19.
+## Usage
 
-## Development server
+First, import the NgAdblockDetectModule to your module:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```typescript
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgAdblockDetectModule } from 'ng-adblock-detect';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { AppComponent } from './app';
 
-## Code scaffolding
+@NgModule({
+  imports: [BrowserModule, NgAdblockDetectModule],
+  declarations: [AppComponent],
+  bootstrap: [AppComponent]
+})
+export class AppModule {}
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+platformBrowserDynamic().bootstrapModule(AppModule);
+```
 
-## Build
+The **adblockDetected** callback will be invoked when after the view has loaded:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```typescript
+import { Component } from '@angular/core';
 
-## Running unit tests
+@Component({
+  selector: 'app',
+  template: `
+    <h1>Home Page</h1>
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+    <ng-adblock-detect (adblockDetected)="detected($event)"></ng-adblock-detect>
+  `
+})
+export class AppComponent {
+  
+  detected(isDetected: boolean) {
+    console.log(`Adblock Detected: ` ${isDetected});
+  }
+}
+```
 
-## Running end-to-end tests
+By default, the adblockDetected callback is invoked after 1 second.  This can be configured by passing in a **timer** parameter to the component (milliseconds):
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+```
+<ng-adblock-detect (adblockDetected)="detected($event)" timer="5000"></ng-adblock-detect>
+```
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
