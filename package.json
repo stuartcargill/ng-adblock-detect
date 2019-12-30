@@ -1,6 +1,9 @@
 {
-  "name": "ngx-adblock-detect",
-  "version": "0.0.0",
+  "name": "ng-adblock-detect",
+  "version": "1.0.0",
+  "author": "Stuart Cargill",
+  "description": "Adblock detector for Angular 8+ applications",
+  "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -8,6 +11,21 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
+  },
+  "keywords": [
+    "ngx",
+    "ng",
+    "angular",
+    "adblock",
+    "adblock detect",
+    "adblock detector"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danrevah/ngx-pipes.git"
+  },
+  "peerDependencies": {
+    "@angular/core": "^8.0.0"
   },
   "private": true,
   "dependencies": {
@@ -24,6 +42,8 @@
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "~0.803.21",
+    "@angular-devkit/build-ng-packagr": "~0.803.21",
     "@angular/cli": "~8.3.19",
     "@angular/compiler-cli": "~8.2.14",
     "@angular/language-service": "~8.2.14",
@@ -38,8 +58,10 @@
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.0",
+    "ng-packagr": "^5.4.0",
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
+    "tsickle": "^0.37.0",
     "tslint": "~5.15.0",
     "typescript": "~3.5.3"
   }
