@@ -1,5 +1,5 @@
 # Angular Adblock Detect
-Super simple compact adblock detecter for Angular 8+.  Angular Universal/SSR compatible.  
+Super simple compact adblock detector for Angular 8+.  Angular Universal/SSR compatible.  
 
 ## Usage
 
