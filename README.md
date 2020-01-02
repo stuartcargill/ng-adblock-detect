@@ -1,5 +1,5 @@
 # Angular Adblock Detect
-Super simple compact adblock detecter for Angular 8+.  Angular Universal/SSR compatible.  
+Super simple compact adblock detector for Angular 8+.  Angular Universal/SSR compatible.  
 
 ## Usage
 
@@ -48,5 +48,10 @@ By default, the adblockDetected callback is invoked after 1 second.  This can be
 ```
 <ng-adblock-detect (adblockDetected)="detected($event)" timer="5000"></ng-adblock-detect>
 ```
+
+## DEMO
+With adblock enabled, [click this link and navigate to a phone number](https://quackr.io/receive-sms/us)
+
+
 
 
