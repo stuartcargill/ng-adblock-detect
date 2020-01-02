@@ -1,6 +1,6 @@
 {
   "name": "ng-adblock-detect",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Stuart Cargill",
   "description": "Adblock detector for Angular 8+ applications",
   "license": "MIT",
