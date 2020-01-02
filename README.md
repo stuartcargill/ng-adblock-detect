@@ -22,7 +22,7 @@ export class AppModule {}
 platformBrowserDynamic().bootstrapModule(AppModule);
 ```
 
-The **adblockDetected** callback will be invoked when after the view has loaded:
+The **adblockDetected** callback will be invoked after the view has loaded:
 
 ```typescript
 import { Component } from '@angular/core';
