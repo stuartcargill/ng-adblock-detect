@@ -1,0 +1,7 @@
+make any changes inside projects folder
+
+to build run:
+ng build ng-adblock-detect
+
+to publish to npm, navigate to dist/project-name then
+npm publish

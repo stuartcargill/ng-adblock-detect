@@ -25,7 +25,8 @@
     "url": "https://github.com/stuartcargill/ng-adblock-detect.git"
   },
   "peerDependencies": {
-    "@angular/core": "^8.0.0"
+    "@angular/core": "^8.0.0",
+    "@angular/common": "^8.0.0"
   },
   "dependencies": {
     "@angular/animations": "~8.2.14",

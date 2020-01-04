@@ -1,24 +1,57 @@
-# NgAdblockDetect
+# Angular Adblock Detect
+Super simple compact adblock detector for Angular 8+.  Angular Universal/SSR compatible.  
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.14.
+## Usage
 
-## Code scaffolding
+First, import the NgAdblockDetectModule to your module:
 
-Run `ng generate component component-name --project ng-adblock-detect` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ng-adblock-detect`.
-> Note: Don't forget to add `--project ng-adblock-detect` or else it will be added to the default project in your `angular.json` file. 
+```typescript
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgAdblockDetectModule } from 'ng-adblock-detect';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { AppComponent } from './app';
 
-## Build
+@NgModule({
+  imports: [BrowserModule, NgAdblockDetectModule],
+  declarations: [AppComponent],
+  bootstrap: [AppComponent]
+})
+export class AppModule {}
 
-Run `ng build ng-adblock-detect` to build the project. The build artifacts will be stored in the `dist/` directory.
+platformBrowserDynamic().bootstrapModule(AppModule);
+```
 
-## Publishing
+The **adblockDetected** callback will be invoked after the view has loaded:
 
-After building your library with `ng build ng-adblock-detect`, go to the dist folder `cd dist/ng-adblock-detect` and run `npm publish`.
+```typescript
+import { Component } from '@angular/core';
 
-## Running unit tests
+@Component({
+  selector: 'app',
+  template: `
+    <h1>Home Page</h1>
 
-Run `ng test ng-adblock-detect` to execute the unit tests via [Karma](https://karma-runner.github.io).
+    <ng-adblock-detect (adblockDetected)="detected($event)"></ng-adblock-detect>
+  `
+})
+export class AppComponent {
+  
+  detected(isDetected: boolean) {
+    console.log(`Adblock Detected: ` ${isDetected});
+  }
+}
+```
 
-## Further help
+By default, the adblockDetected callback is invoked after 1 second.  This can be configured by passing in a **timer** parameter to the component (milliseconds):
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```
+<ng-adblock-detect (adblockDetected)="detected($event)" timer="5000"></ng-adblock-detect>
+```
+
+## DEMO
+With adblock enabled, [click this link and navigate to a phone number](https://quackr.io/receive-sms/us)
+
+
+
+
