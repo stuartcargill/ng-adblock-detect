@@ -50,7 +50,7 @@ By default, the adblockDetected callback is invoked after 1 second.  This can be
 ```
 
 ## DEMO
-With adblock enabled, [click this link and navigate to a phone number](https://quackr.io/receive-sms/us)
+With adblock enabled, [click this link and navigate to a temporary phone number](https://quackr.io/temporary-numbers)
 
 
 
