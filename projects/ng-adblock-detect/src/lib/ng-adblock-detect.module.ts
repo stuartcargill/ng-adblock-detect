@@ -1,7 +1,5 @@
-import { NgModule } from '@angular/core';
-import { NgAdblockDetectComponent } from './ng-adblock-detect.component';
-
-
+import { NgModule } from '@angular/core'
+import { NgAdblockDetectComponent } from './ng-adblock-detect.component'
 
 @NgModule({
   declarations: [NgAdblockDetectComponent],
