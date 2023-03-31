@@ -8,7 +8,7 @@ First, import the NgAdblockDetectModule to your module:
 ```typescript
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgAdblockDetectModule } from 'ng-adblock-detect';
+import { NgAdblockDetectModule } from 'ng-adblock-detect2';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppComponent } from './app';
 
