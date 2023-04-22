@@ -10,7 +10,7 @@
       "prefix": "lib",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/ng-adblock-detect/tsconfig.lib.json",
             "project": "projects/ng-adblock-detect/ng-package.json"
@@ -38,5 +38,8 @@
         }
       }
     }},
-  "defaultProject": "ng-adblock-detect"
+  "defaultProject": "ng-adblock-detect",
+  "cli": {
+    "analytics": "5785b691-cb86-403c-a0f9-9cb58883d747"
+  }
 }
