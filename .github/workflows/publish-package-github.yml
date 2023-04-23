@@ -13,6 +13,9 @@ jobs:
   build:
     name: Build and deploy to github
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
     steps:
       - name: Checkout source
         uses: actions/checkout@v3
