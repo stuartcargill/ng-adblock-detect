@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   build:
-    name: Build APK
+    name: Build and deploy to github
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source
@@ -31,6 +31,13 @@ jobs:
           file:  projects/ng-adblock-detect/package.json
           field: version
           value: ${{ github.event.release.tag_name }}
+
+      - name: Update Package.json version
+        uses: jossef/action-set-json-field@v2.1
+        with:
+          file:  projects/ng-adblock-detect/package.json
+          field: name
+          value: ${{github.actor}}/${{ github.event.repository.name }}
 
       - name: Install app dependencies
         run: yarn install --frozen-lockfile

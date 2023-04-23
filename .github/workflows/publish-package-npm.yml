@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   build:
-    name: Build APK
+    name:  Build and deploy to npmjs
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source
