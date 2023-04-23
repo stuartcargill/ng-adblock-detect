@@ -33,7 +33,7 @@ jobs:
           value: ${{ github.event.release.tag_name }}
 
       - name: Install app dependencies
-        run: npm ci
+        run: yarn install --frozen-lockfile
 
       - name: Build Svelte app
         run: |
