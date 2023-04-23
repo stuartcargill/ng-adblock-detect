@@ -32,10 +32,7 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Build Svelte app
-        run: |
-          yarn build
-          cd dist/ng-adblock-detect
-
+        run: yarn build
 
       - name: Update Package.json version
         uses: jossef/action-set-json-field@v2.1
@@ -51,9 +48,9 @@ jobs:
           field: name
           value: ${{github.actor}}/${{ github.event.repository.name }}
 
-
-
       - name: Publish Package in github
-        run: npm publish
+        run: |
+          cd dist/ng-adblock-detect
+          npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
