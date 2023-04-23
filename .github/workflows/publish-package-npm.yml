@@ -36,11 +36,12 @@ jobs:
         run: npm ci
 
       - name: Build Svelte app
-        run: yarn build
-        run: cd dist/ng-adblock-detect
+        run: |
+          yarn build
+          cd dist/ng-adblock-detect
 
       - name:  Publish Package in npmjs
         run: npm publish
-          env:
-            NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
