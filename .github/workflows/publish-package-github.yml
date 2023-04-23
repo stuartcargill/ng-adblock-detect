@@ -46,7 +46,7 @@ jobs:
         with:
           file:  dist/ng-adblock-detect/package.json
           field: name
-          value: ${{github.actor}}/${{ github.event.repository.name }}
+          value: '@'${{github.actor}}/${{ github.event.repository.name }}
 
       - name: Publish Package in github
         run: |
