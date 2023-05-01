@@ -1,5 +1,5 @@
 {
-  "name": "ng-adblock-detect",
+  "name": "ng-adblock-detect2",
   "keywords": [
     "ngx",
     "ng",
@@ -9,17 +9,20 @@
     "adblock detector"
   ],
   "author": "Stuart Cargill",
+  "contributors": [
+    {
+      "name" : "Felipe Mateus",
+      "email" : "eu@felipemateus.com",
+      "url" : "http://felipemateus.com"
+    }
+  ],
   "description": "Adblock detector for Angular 8+ applications",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/stuartcargill/ng-adblock-detect.git"
+    "url": "https://github.com/eufelipemateus/ng-adblock-detect.git"
   },
-  "version": "1.0.2",
-  "peerDependencies": {
-    "@angular/common": "^8.0.0",
-    "@angular/core": "^8.0.0"
-  }
+  "version": "1.0.3"
 }
 
 

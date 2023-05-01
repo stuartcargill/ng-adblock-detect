@@ -1,0 +1,56 @@
+name: Publish Github
+
+on:
+  release:
+    types: [created]
+
+permissions:
+  actions: write
+  contents: write
+  deployments: write
+
+jobs:
+  build:
+    name: Build and deploy to github
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v3
+        with:
+          set-safe-directory: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          registry-url: 'https://npm.pkg.github.com'
+
+      - name: Install app dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Build Svelte app
+        run: yarn build
+
+      - name: Update Package.json version
+        uses: jossef/action-set-json-field@v2.1
+        with:
+          file:  dist/ng-adblock-detect/package.json
+          field: version
+          value: ${{ github.event.release.tag_name }}
+
+      - name: Update Package.json version
+        uses: jossef/action-set-json-field@v2.1
+        with:
+          file:  dist/ng-adblock-detect/package.json
+          field: name
+          value: "@${{github.actor}}/${{ github.event.repository.name }}"
+
+      - name: Publish Package in github
+        run: |
+          cd dist/ng-adblock-detect
+          npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
